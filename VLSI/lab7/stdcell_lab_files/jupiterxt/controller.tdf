@@ -1,0 +1,56 @@
+
+;pin placement
+; format is
+; pin pinname layer width height pinside <pinOrder> <pinOffset>
+;  pinname: name of pin
+;  layer : name or number of layer, -1 means any layer
+;  width : width of pin, 0 means minimum 
+;  height : height of pin, 0 means minimum
+;  pinside:  "top", "bottom", "left", "right", "none"
+;  pinOrder: integer 0 to 32767
+;   lower numbers mean closer to left edge or closer to bottom
+;   0: pin placement relative to other pins unimportant
+;   1: no pin can be placed between pin and boundary corner
+;   2: any number of pins can be placed between pin and boundary corner
+;   if two pins have consecutive pinorer values, no pin can be placed
+;    between them
+;   if a group of pins have same order, no other pins can be placed
+;   between pins of this group, and pin ordering within the group
+;   does not matter
+; pinoffset: relative offset ofthe pin placement from the bottom
+;   edge or the left edge of the cell boundary, distance units.
+;   A negative number means no relative offset
+
+
+
+pin "ph1" -1 0 0 "left" 100
+pin "ph2" -1 0 0 "left" 200
+pin "reset" -1 0 0 "right" 100
+pin "op0" -1 0 0 "top" 100
+pin "op1" -1 0 0 "top" 200
+pin "op2" -1 0 0 "top" 300
+pin "op3" -1 0 0 "top" 400
+pin "op4" -1 0 0 "top" 500
+pin "op5" -1 0 0 "top" 600
+pin "zero" -1 0 0 "top" 700
+
+pin "memread" -1 0 0 "bottom" 100
+pin "memwrite" -1 0 0 "bottom" 200
+pin "pcchange" -1 0 0 "bottom" 300
+pin "regwrite" -1 0 0 "bottom" 400
+pin "irwrite0" -1 0 0 "bottom" 500
+pin "irwrite1" -1 0 0 "bottom" 600
+pin "irwrite2" -1 0 0 "bottom" 700
+pin "irwrite3" -1 0 0 "bottom" 900
+pin "aluop0" -1 0 0 "bottom" 1100
+pin "aluop1" -1 0 0 "bottom" 1200
+pin "alusrca" -1 0 0 "bottom" 1300
+pin "alusrcb0" -1 0 0 "bottom" 1400
+pin "alusrcb1" -1 0 0 "bottom" 1500
+pin "pcsource0" -1 0 0 "bottom" 1600
+pin "pcsource1" -1 0 0 "bottom" 1700
+pin "iord" -1 0 0 "bottom" 1800
+pin "memtoreg" -1 0 0 "bottom" 1900
+pin "regdst" -1 0 0 "bottom" 2000
+
+

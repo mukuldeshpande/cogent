@@ -1,0 +1,15 @@
+
+# to run this do:
+# swsetup synopsys-2009
+# dc_shell  -f controller.script
+#
+
+set link_library {stdh_mudd.db}
+set target_library {stdh_mudd.db}
+read_file -f verilog rtl/controller.v
+set_flatten true
+set_max_area 0.0
+compile -ungroup_all -map_effort medium
+write controller -format verilog -output gate/controller.v
+quit
+

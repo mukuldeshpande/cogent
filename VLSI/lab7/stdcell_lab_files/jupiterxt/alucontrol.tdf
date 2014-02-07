@@ -1,0 +1,34 @@
+
+;pin placement
+; format is
+; pin pinname layer width height pinside <pinOrder> <pinOffset>
+;  pinname: name of pin
+;  layer : name or number of layer, -1 means any layer
+;  width : width of pin, 0 means minimum 
+;  height : height of pin, 0 means minimum
+;  pinside:  "top", "bottom", "left", "right", "none"
+;  pinOrder: integer 0 to 32767
+;   lower numbers mean closer to left edge or closer to bottom
+;   0: pin placement relative to other pins unimportant
+;   1: no pin can be placed between pin and boundary corner
+;   2: any number of pins can be placed between pin and boundary corner
+;   if two pins have consecutive pinorer values, no pin can be placed
+;    between them
+;   if a group of pins have same order, no other pins can be placed
+;   between pins of this group, and pin ordering within the group
+;   does not matter
+; pinoffset: relative offset ofthe pin placement from the bottom
+;   edge or the left edge of the cell boundary, distance units.
+;   A negative number means no relative offset
+
+pin "\\aluop[0]" -1 0 0 "top" 100
+pin "\\aluop[1]" -1 0 0 "top" 200
+pin "\\funct[0]" -1 0 0 "top" 300
+pin "\\funct[1]" -1 0 0 "top" 400
+pin "\\funct[2]" -1 0 0 "top" 500
+pin "\\funct[3]" -1 0 0 "top" 600
+
+pin "\\alucontrol[0]" -1 0 0 "bottom" 100
+pin "\\alucontrol[1]" -1 0 0 "bottom" 200
+pin "\\alucontrol[2]" -1 0 0 "bottom" 300
+

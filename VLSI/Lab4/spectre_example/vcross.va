@@ -1,0 +1,27 @@
+//VerilogA
+
+`include "constants.h"
+`include "discipline.h"
+
+module vcross (vin,vout);
+input vin;
+input vout;
+electrical vin;
+electrical vout;
+
+parameter real vmax=3.3;
+
+
+integer flag;
+
+analog begin
+       
+  if (analysis("dc")) begin
+    if ( abs(V(vin) - V(vout)) < 0.01) begin
+     $display(" Switch point: Vin= %g (%g%%), Vout= %g (%g%%) Vdd= %g\n", V(vin), V(vin)/vmax*100, V(vout),V(vout)/vmax*100,vmax);
+    end
+  end
+
+end
+
+endmodule

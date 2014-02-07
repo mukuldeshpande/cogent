@@ -1,0 +1,10 @@
+
+# to run this do:
+# swsetup synopsys-2009
+# dc_shell -f scriptfile
+#
+
+read_lib stdh_mudd.lib
+write_lib stdh_mudd -format db -output stdh_mudd.db 
+quit
+

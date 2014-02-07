@@ -1,0 +1,16 @@
+
+# to run this do:
+# swsetup synopsys-2009
+# dc_shell -f alucontrol.script
+#
+
+set link_library {stdh_mudd.db}
+set target_library {stdh_mudd.db}
+read_file -f verilog rtl/alucontrol.v
+set_flatten true
+set_max_area 0.0
+compile -ungroup_all -map_effort medium
+set verilogout_single_bit true
+write alucontrol -format verilog -output gate/alucontrol.v
+quit
+

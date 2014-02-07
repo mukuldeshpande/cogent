@@ -1,0 +1,87 @@
+// 
+simulator lang=spectre insensitive=yes
+//  SPICE 3f5 Level 8, Star-HSPICE Level 49, UTMOST Level 8
+ 
+//  DATE: Sep  4/01
+//  LOT: T17B                  WAF: 3010
+//  Temperature_parameters=Default
+model cmosn bsim3v3 type=n 
++ version=3.1               tnom=27                   tox=5.8e-9
++ xj=1e-7                   nch=2.3549e17             vth0=0.3819327
++ k1=0.477867               k2=2.422759e-3            k3=1e-3
++ k3b=2.1606637             w0=1e-7                   nlx=1.579864e-7
++ dvt0w=0                   dvt1w=0                   dvt2w=0
++ dvt0=0.5334651            dvt1=0.7186877            dvt2=-0.5
++ u0=289.1720829            ua=-1.300598e-9           ub=2.308197e-18
++ uc=2.841618e-11           vsat=1.482651e5           a0=1.6856991
++ ags=0.2874763             b0=-1.833193e-8           b1=-1e-7
++ keta=-2.395348e-3         a1=0                      a2=0.4177975
++ rdsw=178.7751373          prwg=0.3774172            prwb=-0.2
++ wr=1                      wint=0                    lint=1.888394e-8
++ xl=3e-8                   xw=-4e-8                  dwg=-1.213938e-8
++ dwb=4.613042e-9           voff=-0.0981658           nfactor=1.2032376
++ cit=0                     cdsc=2.4e-4               cdscd=0
++ cdscb=0                   eta0=5.128492e-3          etab=6.18609e-4
++ dsub=0.0463218            pclm=1.91946              pdiblc1=1
++ pdiblc2=4.422611e-3       pdiblcb=-0.1              drout=0.9817908
++ pscbe1=7.982649e10        pscbe2=5.200359e-10       pvag=9.314435e-3
++ delta=0.01                rsh=3.7                   mobmod=1
++ prt=0                     ute=-1.5                  kt1=-0.11
++ kt1l=0                    kt2=0.022                 ua1=4.31e-9
++ ub1=-7.61e-18             uc1=-5.6e-11              at=3.3e4
++ wl=0                      wln=1                     ww=0
++ wwn=1                     wwl=0                     ll=0
++ lln=1                     lw=0                      lwn=1
++ lwl=0                     capmod=2                  xpart=0.5
++ cgdo=5.62e-10             cgso=5.62e-10             cgbo=1e-12
++ cj=1.641005e-3            pb=0.99                   mj=0.4453094
++ cjsw=4.179682e-10         pbsw=0.99                 mjsw=0.3413857
++ cjswg=3.29e-10            pbswg=0.99                mjswg=0.3413857
++ cf=0                      pvth0=-8.385037e-3        prdsw=-10
++ pk2=2.650965e-3           wketa=7.293869e-3         lketa=-6.070221e-3
+// 
+model cmosp bsim3v3 type=p 
++ version=3.1               tnom=27                   tox=5.8e-9
++ xj=1e-7                   nch=4.1589e17             vth0=-0.5739762
++ k1=0.6266074              k2=1.651948e-3            k3=0
++ k3b=8.1786329             w0=1e-6                   nlx=1e-9
++ dvt0w=0                   dvt1w=0                   dvt2w=0
++ dvt0=2.9123268            dvt1=0.6575827            dvt2=-0.2496367
++ u0=102.5675612            ua=1.025046e-9            ub=1e-21
++ uc=-1e-10                 vsat=2e5                  a0=0.6132777
++ ags=0                     b0=1.871134e-6            b1=5e-6
++ keta=0.0202204            a1=7.071317e-4            a2=0.3
++ rdsw=491.7112485          prwg=0.5                  prwb=-0.1854575
++ wr=1                      wint=0                    lint=4.226186e-8
++ xl=3e-8                   xw=-4e-8                  dwg=-3.005827e-8
++ dwb=4.379169e-9           voff=-0.0582608           nfactor=2
++ cit=0                     cdsc=2.4e-4               cdscd=0
++ cdscb=0                   eta0=0.5327788            etab=-0.4499824
++ dsub=1.056684             pclm=1.256267             pdiblc1=6.875718e-3
++ pdiblc2=2.621289e-5       pdiblcb=-1e-3             drout=0.0785892
++ pscbe1=1.765896e10        pscbe2=1.433018e-9        pvag=0.0149955
++ delta=0.01                rsh=3                     mobmod=1
++ prt=0                     ute=-1.5                  kt1=-0.11
++ kt1l=0                    kt2=0.022                 ua1=4.31e-9
++ ub1=-7.61e-18             uc1=-5.6e-11              at=3.3e4
++ wl=0                      wln=1                     ww=0
++ wwn=1                     wwl=0                     ll=0
++ lln=1                     lw=0                      lwn=1
++ lwl=0                     capmod=2                  xpart=0.5
++ cgdo=6.3e-10              cgso=6.3e-10              cgbo=1e-12
++ cj=1.830742e-3            pb=0.99                   mj=0.4728897
++ cjsw=3.186944e-10         pbsw=0.5515582            mjsw=0.3089606
++ cjswg=2.5e-10             pbswg=0.5515582           mjswg=0.3089606
++ cf=0                      pvth0=4.250525e-3         prdsw=13.4269534
++ pk2=4.09228e-3            wketa=0.0143927           lketa=5.423396e-4
+// 
+ 
+ 
+parameters  lambda = 0.125u
+parameters  vdd_tech=2.5
+//multiplication factor for Pmos transistor widths
+parameters p_mult=2.0
+
+
+
+ 

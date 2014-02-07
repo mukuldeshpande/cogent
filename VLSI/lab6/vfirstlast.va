@@ -1,0 +1,25 @@
+//VerilogA
+
+`include "constants.h"
+`include "discipline.h"
+
+module vfirstlast (vout);
+input vout;
+electrical vout;
+
+parameter real vmax=3.3;
+
+analog begin
+
+  @(initial_step) begin
+     $display(" At start: Vout= %g (%g%%) Vdd= %g\n", V(vout),V(vout)/vmax*100,vmax);
+  end
+
+  @(final_step) begin
+     $display(" At end: Vout= %g (%g%%) Vdd= %g\n", V(vout),V(vout)/vmax*100,vmax);
+  end
+
+end
+
+
+endmodule

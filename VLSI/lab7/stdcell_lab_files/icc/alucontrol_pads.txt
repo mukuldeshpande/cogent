@@ -1,0 +1,18 @@
+#this file controls placement of pins around the core
+#side 1 - left
+#side 2 - top
+#side 3 - right
+#side 4 - bottom
+# 'order' represents relative ordering from bottom to top (left/right sides
+# or  from left to right (top/bottom sides)
+
+set_pin_physical_constraints -pin_name { aluop[0] } -side 2 -order 100
+set_pin_physical_constraints -pin_name { aluop[1] } -side 2 -order 200
+set_pin_physical_constraints -pin_name { funct[0] } -side 2 -order 300
+set_pin_physical_constraints -pin_name { funct[1] } -side 2 -order 400
+set_pin_physical_constraints -pin_name { funct[2] } -side 2 -order 500
+set_pin_physical_constraints -pin_name { funct[3] } -side 2 -order 600
+
+set_pin_physical_constraints -pin_name { alucontrol[0] } -side 4 -order 100
+set_pin_physical_constraints -pin_name { alucontrol[1] } -side 4 -order 200
+set_pin_physical_constraints -pin_name { alucontrol[2] } -side 4 -order 300

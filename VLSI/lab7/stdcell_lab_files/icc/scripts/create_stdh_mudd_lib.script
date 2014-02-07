@@ -1,0 +1,15 @@
+#start Milkyway with : Milkyway -galaxy -tcl
+# then do : source <this scriptname>
+cmCreateLib
+setFormField create_library set_case_sensitive 1
+setFormField create_library library_name stdh_mudd
+setFormField create_library technology_file_name mocmos.tf
+formOK create_library
+geOpenLib
+setFormField open_library library_name stdh_mudd
+formOK open_library
+read_lef -help
+read_lef -cell_lef_files stdh_mudd.lef
+geConfirmCloseLib
+formYes dialog_box
+quit

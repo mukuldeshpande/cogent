@@ -1,0 +1,617 @@
+MACRO stdh_wellfill
+  FOREIGN stdh_wellfill ;
+  SIZE 2.4 BY 21.6 ;
+  SITE stdh_wellfill ;
+
+END stdh_wellfill
+
+MACRO stdh_inv
+  FOREIGN stdh_inv ;
+  SIZE 4.8 BY 21.6 ;
+  SITE stdh_inv ;
+  PIN a
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 12.45 1.65 13.35 ;
+    LAYER METAL1 ;
+    RECT 0.9 10.05 2.1 11.25 ;
+    LAYER METAL1 ;
+    RECT 0.6 10.05 1.8 13.5 ;
+    RECT 0.6 10.05 2.1 11.25 ;
+    END
+  END a
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 0.75 1.65 1.65 ;
+    LAYER METAL1 ;
+    RECT 0.6 3.6 1.8 5.4 ;
+    LAYER METAL1 ;
+    RECT 0.6 0.6 4.2 1.8 ;
+    LAYER METAL1 ;
+    RECT 0.6 0.6 1.8 5.1 ;
+    RECT 0 0 2.4 2.4 ;
+    LAYER METAL1 ;
+    RECT 0 0 4.8 2.4 ;
+    RECT 0 0 2.4 2.4 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 19.95 1.65 20.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 14.7 1.8 18.3 ;
+    LAYER METAL1 ;
+    RECT 0.6 19.8 4.2 21 ;
+    LAYER METAL1 ;
+    RECT 0.6 19.95 1.65 20.85 ;
+    RECT 0.6 19.8 1.8 21 ;
+    RECT 0.6 15.9 1.8 21 ;
+    LAYER METAL1 ;
+    RECT 0 19.2 4.8 21.6 ;
+    RECT 0 19.2 2.4 21.6 ;
+    END
+    USE POWER ;
+  END vdd
+
+  PIN y
+    PORT
+    LAYER METAL1 ;
+    RECT 3.15 12.75 4.05 13.65 ;
+    LAYER METAL1 ;
+    RECT 3 14.7 4.2 18.3 ;
+    LAYER METAL1 ;
+    RECT 3 3.6 4.2 5.4 ;
+    LAYER METAL1 ;
+    RECT 3.15 16.05 4.05 17.4 ;
+    LAYER METAL1 ;
+    RECT 3 3.9 4.2 13.8 ;
+    RECT 3 12.6 4.2 17.55 ;
+    END
+  END y
+
+  OBS
+  END
+
+END stdh_inv
+MACRO stdh_latch
+  FOREIGN stdh_latch ;
+  SIZE 24.0 BY 21.6 ;
+  SITE stdh_latch ;
+  PIN d
+    PORT
+    LAYER METAL1 ;
+    RECT 5.55 8.55 6.45 9.45 ;
+    LAYER METAL1 ;
+    RECT 6.3 4.2 7.5 6 ;
+    LAYER METAL1 ;
+    RECT 6.3 13.65 7.5 17.25 ;
+    LAYER METAL1 ;
+    RECT 6.45 8.55 7.35 14.7 ;
+    RECT 6.45 4.95 7.35 9.45 ;
+    RECT 5.4 8.4 7.5 9.6 ;
+    END
+  END d
+
+  PIN g
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 10.725 1.65 11.625 ;
+    LAYER METAL1 ;
+    RECT 0.9 9 2.1 10.2 ;
+    LAYER METAL1 ;
+    RECT 0.6 9 1.8 11.775 ;
+    RECT 0.6 9 2.1 10.2 ;
+    END
+  END g
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.3 0.75 1.2 1.65 ;
+    LAYER METAL1 ;
+    RECT 18 4.2 19.2 6 ;
+    LAYER METAL1 ;
+    RECT 12.9 4.2 14.1 6 ;
+    LAYER METAL1 ;
+    RECT 0.6 4.2 1.8 6 ;
+    LAYER METAL1 ;
+    RECT 11.4 0.6 15.6 1.8 ;
+    LAYER METAL1 ;
+    RECT 18 0.6 19.2 5.4 ;
+    RECT 12.3 0 19.8 2.4 ;
+    RECT 12.9 0.6 14.1 5.4 ;
+    RECT 0 0 14.7 2.4 ;
+    RECT 0.15 0.6 1.8 1.8 ;
+    RECT 0.6 0.6 1.8 5.4 ;
+    RECT 12.9 0.6 14.1 1.8 ;
+    RECT 17.4 0 24 2.4 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN q
+    PORT
+    LAYER METAL1 ;
+    RECT 19.95 10.95 20.85 11.85 ;
+    LAYER METAL1 ;
+    RECT 20.4 13.65 21.6 17.25 ;
+    LAYER METAL1 ;
+    RECT 20.4 4.2 21.6 6 ;
+    LAYER METAL1 ;
+    RECT 20.4 4.8 21.6 12 ;
+    RECT 20.4 10.8 21.6 14.85 ;
+    RECT 19.8 10.8 21.6 12 ;
+    END
+  END q
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.9 19.95 1.8 20.85 ;
+    LAYER METAL1 ;
+    RECT 18 13.65 19.2 17.25 ;
+    LAYER METAL1 ;
+    RECT 12.9 13.65 14.1 17.25 ;
+    LAYER METAL1 ;
+    RECT 0.6 13.65 1.8 17.25 ;
+    LAYER METAL1 ;
+    RECT 11.4 19.8 15.6 21 ;
+    LAYER METAL1 ;
+    RECT 0.6 16.05 1.8 21 ;
+    RECT 1.65 19.2 14.7 21.6 ;
+    RECT 12.9 16.05 14.1 21 ;
+    RECT 12.3 19.2 19.8 21.6 ;
+    RECT 18 16.05 19.2 21 ;
+    RECT 12.9 19.8 14.1 21 ;
+    RECT 17.4 19.2 24 21.6 ;
+    RECT 0 19.2 4.05 21.6 ;
+    RECT 0 19.2 4.05 21.6 ;
+    RECT 1.65 19.2 14.7 21.6 ;
+    RECT 0.15 19.2 4.05 21.6 ;
+    END
+    USE POWER ;
+  END vdd
+
+  OBS
+    LAYER METAL1 ;
+    RECT 8.7 13.65 9.9 17.25 ;
+    LAYER METAL1 ;
+    RECT 8.7 4.2 9.9 6 ;
+    LAYER METAL1 ;
+    RECT 15.6 4.2 16.8 6 ;
+    LAYER METAL1 ;
+    RECT 15.6 13.65 16.8 17.25 ;
+    LAYER METAL1 ;
+    RECT 13.65 11.1 14.85 12.3 ;
+    LAYER METAL1 ;
+    RECT 3 13.65 4.2 17.25 ;
+    LAYER METAL1 ;
+    RECT 3 4.2 4.2 6 ;
+    LAYER METAL1 ;
+    RECT 11.4 8.55 12.6 9.75 ;
+    LAYER METAL1 ;
+    RECT 4.35 10.5 5.55 11.7 ;
+    LAYER METAL1 ;
+    RECT 18.3 8.7 19.5 9.9 ;
+    LAYER METAL1 ;
+    RECT 3 4.8 4.2 11.7 ;
+    LAYER METAL1 ;
+    RECT 8.7 11.1 9.9 14.85 ;
+    RECT 8.7 11.1 14.85 12.3 ;
+    LAYER METAL1 ;
+    RECT 15.75 4.95 16.65 9.75 ;
+    RECT 15.75 8.85 16.65 14.7 ;
+    LAYER METAL1 ;
+    RECT 11.4 8.85 16.65 9.75 ;
+    RECT 3 10.5 4.2 14.85 ;
+    RECT 3 10.5 5.55 11.7 ;
+    LAYER METAL1 ;
+    RECT 8.7 4.8 9.9 12.3 ;
+    RECT 15.75 8.85 19.2 9.75 ;
+  END
+
+END stdh_latch
+MACRO stdh_nand2
+  FOREIGN stdh_nand2 ;
+  SIZE 7.2 BY 21.6 ;
+  SITE stdh_nand2 ;
+  PIN a
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 13.35 1.65 14.25 ;
+    LAYER METAL1 ;
+    RECT 0.9 11.55 2.1 12.75 ;
+    LAYER METAL1 ;
+    RECT 0.6 11.4 1.8 14.4 ;
+    RECT 0.6 11.4 2.1 12.6 ;
+    END
+  END a
+
+  PIN b
+    PORT
+    LAYER METAL1 ;
+    RECT 5.55 13.35 6.45 14.25 ;
+    LAYER METAL1 ;
+    RECT 5.1 11.55 6.3 12.75 ;
+    LAYER METAL1 ;
+    RECT 5.4 11.55 6.6 14.4 ;
+    RECT 5.1 11.55 6.6 12.75 ;
+    END
+  END b
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 0.75 1.65 1.65 ;
+    LAYER METAL1 ;
+    RECT 0.6 3.3 1.8 5.7 ;
+    LAYER METAL1 ;
+    RECT 0.6 0.6 6.6 1.8 ;
+    LAYER METAL1 ;
+    RECT 0 0 2.4 2.4 ;
+    RECT 0.6 0.6 1.8 4.5 ;
+    RECT 0 0 7.2 2.4 ;
+    RECT 0.6 0.6 4.05 1.8 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 19.95 1.65 20.85 ;
+    LAYER METAL1 ;
+    RECT 5.4 15.9 6.6 18.3 ;
+    LAYER METAL1 ;
+    RECT 0.6 15.9 1.8 18.3 ;
+    LAYER METAL1 ;
+    RECT 0.6 19.8 6.6 21 ;
+    LAYER METAL1 ;
+    RECT 0.6 16.8 1.8 21 ;
+    RECT 0 19.2 2.4 21.6 ;
+    RECT 0 19.2 7.2 21.6 ;
+    RECT 4.8 19.2 7.2 21.6 ;
+    RECT 5.4 17.1 6.6 21 ;
+    RECT 0 19.2 4.65 21.6 ;
+    END
+    USE POWER ;
+  END vdd
+
+  PIN y
+    PORT
+    LAYER METAL1 ;
+    RECT 3.15 13.65 4.05 14.55 ;
+    LAYER METAL1 ;
+    RECT 4.5 3.3 5.7 5.7 ;
+    LAYER METAL1 ;
+    RECT 3 15.9 4.2 18.3 ;
+    LAYER METAL1 ;
+    RECT 4.5 3.6 5.7 8.7 ;
+    RECT 3 7.5 5.7 8.7 ;
+    RECT 3 17.1 4.05 18 ;
+    RECT 4.65 7.65 5.7 8.55 ;
+    RECT 3 7.5 4.2 14.7 ;
+    RECT 3 7.5 4.2 18.15 ;
+    RECT 3 13.5 4.2 18.15 ;
+    END
+  END y
+
+  OBS
+  END
+
+END stdh_nand2
+MACRO stdh_nand3
+  FOREIGN stdh_nand3 ;
+  SIZE 9.6 BY 21.6 ;
+  SITE stdh_nand3 ;
+  PIN a
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 13.2 1.65 14.1 ;
+    LAYER METAL1 ;
+    RECT 0.9 10.65 2.1 11.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 10.65 1.8 14.25 ;
+    RECT 0.6 10.65 2.1 11.85 ;
+    END
+  END a
+
+  PIN b
+    PORT
+    LAYER METAL1 ;
+    RECT 5.55 12.45 6.45 13.35 ;
+    LAYER METAL1 ;
+    RECT 5.1 10.65 6.3 11.85 ;
+    LAYER METAL1 ;
+    RECT 5.4 10.65 6.6 13.5 ;
+    RECT 5.1 10.65 6.6 11.85 ;
+    END
+  END b
+
+  PIN c
+    PORT
+    LAYER METAL1 ;
+    RECT 7.95 12.15 8.85 13.05 ;
+    LAYER METAL1 ;
+    RECT 7.5 10.65 8.7 11.85 ;
+    LAYER METAL1 ;
+    RECT 7.8 10.65 9 13.2 ;
+    RECT 7.5 10.65 9 11.85 ;
+    END
+  END c
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 0.75 1.65 1.65 ;
+    LAYER METAL1 ;
+    RECT 0.6 3.3 1.8 6 ;
+    LAYER METAL1 ;
+    RECT 2.7 0.6 6.9 1.8 ;
+    LAYER METAL1 ;
+    RECT 3.9 0 6.3 2.4 ;
+    RECT 0 0 6.3 2.4 ;
+    RECT 3.9 0 9.6 2.4 ;
+    RECT 0.6 0.6 1.8 1.8 ;
+    RECT 0.6 0.6 1.8 5.1 ;
+    RECT 0 0 2.4 2.4 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 19.95 1.65 20.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 16.5 1.8 18.3 ;
+    LAYER METAL1 ;
+    RECT 5.4 16.5 6.6 18.3 ;
+    LAYER METAL1 ;
+    RECT 2.7 19.8 6.9 21 ;
+    LAYER METAL1 ;
+    RECT 3.6 19.2 6 21.6 ;
+    RECT 0 19.2 6 21.6 ;
+    RECT 3.6 19.2 7.2 21.6 ;
+    RECT 0.45 19.8 1.8 21 ;
+    RECT 5.4 16.8 6.6 21 ;
+    RECT 4.8 19.2 9.6 21.6 ;
+    RECT 0 19.2 2.4 21.6 ;
+    RECT 0.6 16.8 1.8 21 ;
+    END
+    USE POWER ;
+  END vdd
+
+  PIN y
+    PORT
+    LAYER METAL1 ;
+    RECT 3.15 10.5 4.05 11.4 ;
+    LAYER METAL1 ;
+    RECT 3 16.65 4.2 18.15 ;
+    LAYER METAL1 ;
+    RECT 6 3.3 7.2 6 ;
+    LAYER METAL1 ;
+    RECT 7.8 16.5 9 18.3 ;
+    LAYER METAL1 ;
+    RECT 3 17.25 4.05 18.15 ;
+    LAYER METAL1 ;
+    RECT 3 7.5 7.2 8.7 ;
+    RECT 6 4.8 7.2 8.7 ;
+    LAYER METAL1 ;
+    RECT 7.95 14.7 8.85 17.85 ;
+    RECT 3 14.55 4.2 18.3 ;
+    RECT 3.15 14.7 8.85 15.6 ;
+    RECT 3 10.35 4.2 15.75 ;
+    RECT 3 7.5 4.2 11.55 ;
+    END
+  END y
+
+  OBS
+  END
+
+END stdh_nand3
+MACRO stdh_nor2
+  FOREIGN stdh_nor2 ;
+  SIZE 7.2 BY 21.6 ;
+  SITE stdh_nor2 ;
+  PIN a
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 9.15 1.65 10.05 ;
+    LAYER METAL1 ;
+    RECT 0.9 7.65 2.1 8.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 7.65 1.8 10.2 ;
+    RECT 0.6 7.65 2.1 8.85 ;
+    END
+  END a
+
+  PIN b
+    PORT
+    LAYER METAL1 ;
+    RECT 5.55 9.15 6.45 10.05 ;
+    LAYER METAL1 ;
+    RECT 5.1 7.65 6.3 8.85 ;
+    LAYER METAL1 ;
+    RECT 5.4 7.65 6.6 10.2 ;
+    RECT 5.1 7.65 6.6 8.85 ;
+    END
+  END b
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 0.75 1.65 1.65 ;
+    LAYER METAL1 ;
+    RECT 0.6 3.3 1.8 5.1 ;
+    LAYER METAL1 ;
+    RECT 5.4 3.3 6.6 5.1 ;
+    LAYER METAL1 ;
+    RECT 1.8 0.6 6 1.8 ;
+    LAYER METAL1 ;
+    RECT 0 0 2.4 2.4 ;
+    RECT 0.6 0.6 1.8 4.5 ;
+    RECT 0 0 7.2 2.4 ;
+    RECT 4.8 0 7.2 2.4 ;
+    RECT 5.4 0.6 6.6 4.5 ;
+    RECT 0 0 4.95 2.4 ;
+    RECT 0 0 3.45 2.4 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 19.95 1.65 20.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 14.7 1.8 18.3 ;
+    LAYER METAL1 ;
+    RECT 1.8 19.8 6 21 ;
+    LAYER METAL1 ;
+    RECT 0 19.2 4.95 21.6 ;
+    RECT 0.6 15.9 1.8 21 ;
+    RECT 0 19.2 2.4 21.6 ;
+    RECT 0 19.2 7.2 21.6 ;
+    END
+    USE POWER ;
+  END vdd
+
+  PIN y
+    PORT
+    LAYER METAL1 ;
+    RECT 3.15 5.85 4.05 6.75 ;
+    LAYER METAL1 ;
+    RECT 4.5 14.7 5.7 18.3 ;
+    LAYER METAL1 ;
+    RECT 3 3.3 4.2 5.1 ;
+    LAYER METAL1 ;
+    RECT 4.5 12.3 5.7 15.9 ;
+    LAYER METAL1 ;
+    RECT 3 12.3 5.7 13.5 ;
+    RECT 4.65 17.1 5.7 18 ;
+    RECT 3 5.7 4.2 13.5 ;
+    RECT 3 3.45 4.2 6.9 ;
+    END
+  END y
+
+  OBS
+  END
+
+END stdh_nor2
+MACRO stdh_nor3
+  FOREIGN stdh_nor3 ;
+  SIZE 9.6 BY 21.6 ;
+  SITE stdh_nor3 ;
+  PIN a
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 9.15 1.65 10.05 ;
+    LAYER METAL1 ;
+    RECT 0.9 10.8 2.1 12 ;
+    LAYER METAL1 ;
+    RECT 0.6 9 1.8 12 ;
+    RECT 0.6 10.8 2.1 12 ;
+    END
+  END a
+
+  PIN b
+    PORT
+    LAYER METAL1 ;
+    RECT 5.55 8.55 6.45 9.45 ;
+    LAYER METAL1 ;
+    RECT 5.1 9.6 6.3 10.8 ;
+    LAYER METAL1 ;
+    RECT 5.4 8.4 6.6 10.8 ;
+    RECT 5.1 9.6 6.6 10.8 ;
+    END
+  END b
+
+  PIN c
+    PORT
+    LAYER METAL1 ;
+    RECT 7.95 8.55 8.85 9.45 ;
+    LAYER METAL1 ;
+    RECT 7.8 10.65 9 11.85 ;
+    LAYER METAL1 ;
+    RECT 7.8 8.4 9 11.85 ;
+    END
+  END c
+
+  PIN gnd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 0.75 1.65 1.65 ;
+    LAYER METAL1 ;
+    RECT 5.4 3.6 6.6 5.4 ;
+    LAYER METAL1 ;
+    RECT 0.6 3.6 1.8 5.4 ;
+    LAYER METAL1 ;
+    RECT 0.6 0.6 9 1.8 ;
+    LAYER METAL1 ;
+    RECT 4.2 0 6.6 2.4 ;
+    RECT 0 0 6.6 2.4 ;
+    RECT 4.2 0 7.2 2.4 ;
+    RECT 0.6 0.6 1.8 4.8 ;
+    RECT 0 0 2.4 2.4 ;
+    RECT 5.4 0.6 6.6 3.45 ;
+    RECT 4.8 0 9.6 2.4 ;
+    LAYER METAL1 ;
+    RECT 7.8 0.6 9 1.8 ;
+    RECT 5.4 2.25 6.6 4.8 ;
+    RECT 5.4 0.6 6.6 3.45 ;
+    RECT 5.4 2.25 6.6 4.8 ;
+    RECT 0.6 0.6 1.8 1.8 ;
+    END
+    USE GROUND ;
+  END gnd
+
+  PIN vdd
+    PORT
+    LAYER METAL1 ;
+    RECT 0.75 19.95 1.65 20.85 ;
+    LAYER METAL1 ;
+    RECT 0.6 14.4 1.8 18 ;
+    LAYER METAL1 ;
+    RECT 0.6 19.8 9 21 ;
+    LAYER METAL1 ;
+    RECT 3.3 19.2 5.7 21.6 ;
+    RECT 3.3 19.2 9.6 21.6 ;
+    RECT 0 19.2 5.7 21.6 ;
+    RECT 0 19.2 2.4 21.6 ;
+    RECT 0.6 15.9 1.8 21 ;
+    END
+    USE POWER ;
+  END vdd
+
+  PIN y
+    PORT
+    LAYER METAL1 ;
+    RECT 3.15 7.95 4.05 8.85 ;
+    LAYER METAL1 ;
+    RECT 3 3.6 4.2 5.4 ;
+    LAYER METAL1 ;
+    RECT 6 14.4 7.2 18 ;
+    LAYER METAL1 ;
+    RECT 7.8 3.6 9 5.4 ;
+    LAYER METAL1 ;
+    RECT 6 12.9 7.2 16.05 ;
+    RECT 7.8 3.9 9 7.5 ;
+    RECT 3 3.6 4.2 7.5 ;
+    RECT 3 6.3 9 7.5 ;
+    RECT 3 12.9 7.2 14.1 ;
+    RECT 3 7.8 4.2 14.1 ;
+    RECT 3 6.3 4.2 9 ;
+    END
+  END y
+
+  OBS
+  END
+
+END stdh_nor3
+END LIBRARY

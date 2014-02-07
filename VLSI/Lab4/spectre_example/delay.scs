@@ -1,0 +1,56 @@
+//Comment line in spectre
+
+simulator lang=spectre
+
+global 0 gnd vdd 
+//pwr=subckts saves power for subcircuts
+opts options pwr=subckts save=allpub
+aliasGnd (gnd 0 ) vsource type=dc dc=0
+
+include "tech.scs"    //technology file to include
+include "def.scs"     //scaleable transistor definitions based upon technology
+include "lib.scs"     //cell library
+
+//paramters for simulation
+parameters vdd_core=vdd_tech vss_core=0.0
+parameters tr=.1n tf=.1n 
+parameters clock_period=4n 
+parameters  simstop=10*clock_period + clock_period/2
+parameters dut_size=1
+//For delta_probe.va model
+parameters rise=1 fall=2 cross=3
+
+
+v_vdd (vdd gnd) vsource type=dc dc=vdd_core
+vpulse1 (a gnd) vsource type=pulse val0=vss_core val1=vdd_core period=clock_period rise=tr fall=tf width=clock_period/2
+
+//testbench circuit
+driver (a dut_in vdd gnd) dut_driver       
+dut (dut_in dut_out vdd gnd) inv_gen size=dut_size 
+ip (dut_out probe_out) iprobe          //current probe on load
+load (probe_out load_out vdd gnd) dut_load
+
+
+ahdl_include "delta_probe.va"
+dut_tplh (dut_in 0 dut_out 0) delta_probe start_val=0.7*vdd_core \
+start_mode=fall stop_val=0.3*vdd_core stop_mode=rise
+dut_tphl (dut_in 0 dut_out 0) delta_probe start_val=0.3*vdd_core \
+start_mode=rise stop_val=0.7*vdd_core stop_mode=fall
+
+
+ahdl_include "vfirstlast.va"
+vrecord (dut_out) vfirstlast vmax=vdd_core
+
+//print parameters
+ahdl_include "print_parms.va"
+parm_print  print_parms parm_vdd=vdd_tech parm_lambda=lambda parm_p_mult=p_mult
+
+//transient analysis
+tran_test1 tran step=0.01n stop=simstop
+
+
+//uncomment this to run a second test with a different for the P multiplication factor
+//can add as many 'alter' statements as you want
+//alt_test2 alter param=p_mult value=1.5
+//tran_test2 tran step=0.01n stop=simstop
+

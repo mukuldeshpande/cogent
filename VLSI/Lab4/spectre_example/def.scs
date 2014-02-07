@@ -1,0 +1,26 @@
+
+parameters  lmin=2*lambda         //minimum transistor length
+parameters  wmin=3*lambda         //minimum transistor width
+parameters  srcdrn_len=5*lambda   //source drain len 
+
+
+subckt n_def (d g s b)   
+ parameters ls=1 ws=1  
+
+
+x0 (d g s b) cmosn w=ws*wmin l=ls*lmin as=(ws*wmin*srcdrn_len) ad=(ws*wmin*srcdrn_len) \
+     ps=(2*ws*wmin+2*srcdrn_len) pd=(2*ws*wmin+2*srcdrn_len) 
+
+ends n_def
+
+
+subckt p_def (d g s b)   
+  parameters ls=1 ws=1  
+
+x0 (d g s b) cmosp w=ws*wmin l=ls*lmin as=(ws*wmin*srcdrn_len) ad=(ws*wmin*srcdrn_len) \
+     ps=(2*ws*wmin+2*srcdrn_len) pd=(2*ws*wmin+2*srcdrn_len) 
+
+
+
+ends p_def
+ 

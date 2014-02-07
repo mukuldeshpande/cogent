@@ -1,0 +1,24 @@
+//VerilogA
+
+`include "constants.h"
+`include "discipline.h"
+
+module print_parms ;
+
+parameter real parm_vdd=3.3;
+parameter real parm_lambda=0.5;
+parameter real parm_p_mult=2.0;
+
+
+analog begin
+       
+  if (analysis("tran")) begin
+    @(initial_step)   begin
+      $display("SIMPARMS vdd=%g lambda=%g p_mult=%g\n",parm_vdd,parm_lambda,parm_p_mult);
+     end
+  end
+
+
+end
+
+endmodule

@@ -1,0 +1,38 @@
+
+#this file controls placement of pins around the core
+#side 1 - left
+#side 2 - top
+#side 3 - right
+#side 4 - bottom
+# 'order' represents relative ordering from bottom to top (left/right sides
+# or  from left to right (top/bottom sides)
+
+set_pin_physical_constraints -pin_name { ph1 } -side 1 -order 100
+set_pin_physical_constraints -pin_name { ph2 } -side 1 -order 200
+set_pin_physical_constraints -pin_name { reset } -side 2 -order 100
+set_pin_physical_constraints -pin_name { op0 } -side 3 -order 100
+set_pin_physical_constraints -pin_name { op1 } -side 3 -order 200
+set_pin_physical_constraints -pin_name { op2 } -side 3 -order 300
+set_pin_physical_constraints -pin_name { op3 } -side 3 -order 400
+set_pin_physical_constraints -pin_name { op4 } -side 3 -order 500
+set_pin_physical_constraints -pin_name { op5 } -side 3 -order 600
+set_pin_physical_constraints -pin_name { zero } -side 3 -order 700
+
+set_pin_physical_constraints -pin_name { memread } -side 4 -order 100
+set_pin_physical_constraints -pin_name { memwrite } -side 4 -order 200
+set_pin_physical_constraints -pin_name { pcchange } -side 4 -order 300
+set_pin_physical_constraints -pin_name { regwrite } -side 4 -order 400
+set_pin_physical_constraints -pin_name { irwrite0 } -side 4 -order 500
+set_pin_physical_constraints -pin_name { irwrite1 } -side 4 -order 600
+set_pin_physical_constraints -pin_name { irwrite2 } -side 4 -order 700
+set_pin_physical_constraints -pin_name { irwrite3 } -side 4 -order 800
+set_pin_physical_constraints -pin_name { aluop0 } -side 4 -order 900
+set_pin_physical_constraints -pin_name { aluop1 } -side 4 -order 1000
+set_pin_physical_constraints -pin_name { alusrca } -side 4 -order 1100
+set_pin_physical_constraints -pin_name { alusrcb0 } -side 4 -order 1200
+set_pin_physical_constraints -pin_name { alusrcb1 } -side 4 -order 1300
+set_pin_physical_constraints -pin_name { pcsource0 } -side 4 -order 1400
+set_pin_physical_constraints -pin_name { pcsource1 } -side 4 -order 1500
+set_pin_physical_constraints -pin_name { iord } -side 4 -order 1600
+set_pin_physical_constraints -pin_name { memtoreg } -side 4 -order 1700
+set_pin_physical_constraints -pin_name { regdst } -side 4 -order 1800

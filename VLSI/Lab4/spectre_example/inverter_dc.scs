@@ -1,0 +1,45 @@
+
+//DC analysis
+simulator lang=spectre
+
+global 0 gnd vdd 
+//pwr=subckts saves power for subcircuts
+opts options pwr=subckts save=allpub
+aliasGnd (gnd 0 ) vsource type=dc dc=0
+
+include "tech.scs"    //technology file to include
+include "def.scs"     //scaleable transistor definitions based upon technology
+include "lib.scs"     //cell library
+
+//parameters for simulation
+parameters vdd_core=vdd_tech 
+parameters vdd_in=vdd_tech
+parameters dut_size=1
+
+
+dut (dut_in dut_out vdd gnd) inv_gen size=dut_size
+load (dut_out load_out vdd gnd) dut_load
+
+//power supply for dut
+v_vdd (vdd gnd) vsource type=dc dc=vdd_core
+
+// define a DC source for the input
+v_a (dut_in gnd) vsource type=dc dc=vdd_in
+
+// perform a DC sweep of the input voltage from 0 to vdd_tech in 0.01 volage steps
+
+dc_test1 dc param=vdd_in start=0 stop=vdd_tech step=0.001
+
+ahdl_include "vcross.va"   
+dc_probe (dut_in dut_out) vcross vmax=vdd_core
+
+//run a second test with a different for the P multiplication factor
+alt_test2 alter param=p_mult value=1.5
+dc_test2 dc param=vdd_in start=0 stop=vdd_tech step=0.001
+
+//run a third test with a different for the P multiplication factor
+alt_test3 alter param=p_mult value=4.0
+dc_test3 dc param=vdd_in start=0 stop=vdd_tech step=0.001
+
+
+

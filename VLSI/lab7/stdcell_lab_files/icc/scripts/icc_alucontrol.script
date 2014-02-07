@@ -1,0 +1,58 @@
+
+gui_start
+set link_library "stdh_mudd.db"
+set target_library "stdh_mudd.db"
+set mw_logic0_net gnd
+set mw_logic1_net vdd
+
+create_mw_lib -technology mocmos.tf -mw_reference_library stdh_mudd alucontrol_design.mw
+
+open_mw_lib alucontrol_design.mw 
+read_verilog alucontrol.v
+uniquify_fp_mw_cel 
+link 
+save_mw_cel -as alucontrol_initial
+
+read_pin_pad_physical_constraints alucontrol_pads.txt
+
+create_floorplan -core_utilization 0.7 -start_first_row -left_io2core 28.8 -bottom_io2core 28.8 -right_io2core 28.8 -top_io2core 28.8 -core_aspect_ratio 1.0
+
+create_supply_net VDD
+create_supply_net VSS
+
+
+derive_pg_connection -power_net VDD -ground_net VSS
+derive_pg_connection -power_net VDD -ground_net VSS -tie
+
+
+create_rectangular_rings -nets {VDD VSS} -left_segment_layer METAL2 -left_segment_width 12 -right_segment_layer METAL2 -right_segment_width 12 -bottom_segment_layer METAL3 -bottom_segment_width 12 -top_segment_layer METAL3 -top_segment_width 12 
+
+place_opt
+
+insert_stdcell_filler -cell_without_metal {stdh_wellfill}
+set_preroute_drc_strategy -no_design_rule -min_layer METAL1 -max_layer METAL3
+
+preroute_standard_cells
+
+route_opt
+
+
+write_def -rows_tracks_gcells -vias -all_vias -regions_groups -components -pins -blockages -floating_metal_fil -nets -diode_pins -specialnets -notch_gap -pg_metal_fill -scanchain -output "alucontrol.def"
+
+
+sh ./fixdef.py alucontrol.def
+
+
+save_mw_cel -as alucontrol
+
+quit
+
+
+
+
+
+
+
+
+
+
